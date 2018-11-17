@@ -190,9 +190,7 @@ html, body{height:100%;}
 #detail .main_visual .title_area .tit_strong {font-size:50px;}
 #detail .main_visual .title_area .tit_strong_2 {font-size:50px; font-weight:300;}
 #detail .main_visual .info_area {color:#999; font-size:12px; position:absolute; top:860px;}
-#detail .main_visual .info_area > * { }
 
-#detail .content {border:1px solid red}
 #detail .content .block {width:100%;}
 #detail .content .block:last-cild {margin-bottom:0px;}
 #detail .content .block img {width:100%; vertical-align:top;}
