@@ -90,9 +90,23 @@ html, body{height:100%;}
 #intro {overflow:hidden;}
 #wrap.wrap_intro {height:100%;}
 
-.intro_bg {display:block; position:relative; width:1920px; height:1020px;}
-.intro_bg .img_wrapper {overflow:hidden; position:absolute; top:0; left:0; width:100%; height:100%;}
-.intro_bg .img_wrapper img {width:100%; height:100%;}
+.intro_bg {overflow:hidden; display:block; position:relative; width:1920px; height:1020px;}
+.intro_bg .img {
+	position:absolute; 
+	top:50%; 
+	left:0;
+	width:100%; 
+	height:auto;
+	transform: translateY(-50%);
+	transition:all 1.5s ease-in-out;
+}
+.intro_bg .img.num1 {visibility:visible; opacity:1;}
+.intro_bg .img.num2, .intro_bg .img.num3, .intro_bg .img.num4, .intro_bg .img.num5 {
+	visibility:hidden;
+	opacity:0;
+	/* left:-100%; */
+}
+/* .intro_bg .img_wrapper img {width:100%; height:100%;} */
 
 /*.intro_bg .slider{position:absolute; top:0; left:0 width:100%; height:100%;}*/
 /*.intro_bg * {position: absolute;}
@@ -119,37 +133,37 @@ html, body{height:100%;}
 .intro_info > .info_author > * {float:left;}
 .intro_info > .info_author > .number {margin-right:15px;}
 
-.intro_menu {position:absolute; left:50%; bottom:10%; transform:translateX(-50%);}
-.intro_menu > ul:after {content:''; display:block; clear:both; zoom:1;}
-.intro_menu > ul > li {float:left; position:relative; width:28px; margin-left:22px;}
-.intro_menu > ul > li:first-child {padding-left:0;}
-.intro_menu > ul > li .move{
+.intro_pager {position:absolute; left:50%; bottom:10%; transform:translateX(-50%);}
+.intro_pager > ul:after {content:''; display:block; clear:both; zoom:1;}
+.intro_pager > ul > li {float:left; position:relative; width:28px; margin-left:22px;}
+.intro_pager > ul > li:first-child {padding-left:0;}
+.intro_pager > ul > li .move{
 	display:block; 
 	position:absolute;
 	top:0;
 	right:0;
 	width:25px;
-	height:35px; 
+	height:39px; 
 	border-right:2px solid #000; 
 	visibility:hidden;
 	transform-origin:100% 100%;
 	transition:all 0.4s ease;
 	content:'';
 }
-.intro_menu > ul > li > .stay {
+.intro_pager > ul > li > .stay {
 	display:block; 
 	position:relative;
 	top:0;
 	left:0;
 	width:25px; 
-	height:35px; 
+	height:39px; 
 	border-left:2px solid #000;
 	transform:rotate(45deg);
 	transform-origin:0% 100%;
 }
 
-/* main */}
-#main .main_visual .title_area {/*! margin:456px auto 0; */}
+/* main */
+/* #main .main_visual .title_area {! margin:456px auto 0;} */
 
 
 /* main content */
