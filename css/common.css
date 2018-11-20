@@ -28,6 +28,7 @@ html, body{height:100%;}
 #container {width:100%; height:auto;}
 #intro {position: relative; width:100%; height:100%;}
 #main {position: relative; width:100%; height:auto;} 
+#detail {position: relative; width:100%; height:auto;} 
 
 
 /* common */
@@ -45,22 +46,21 @@ html, body{height:100%;}
 #header .gnb > ul > li:first-child {margin-left:0px;}
 #header .gnb > ul > li a {color:#fff; font-size:14px; line-height: 36px;}
 
-.main_visual {overflow:hidden; position:relative; width:100%; height:1020px; color:#fff; background-color:#000; background-size:cover;}
-.main_visual .hero_bg {position:absolute; top:0; left:0; width:1920px; height:1020px;}
-.main_visual .hero_bg img {position:absolute; top:0; left:0;width: 100%;}
-.main_visual .txt_area  {position:relative; width:1400px; height:100%;; margin:0 auto;}
-.main_visual .title_area {position:absolute; left:0; color:#fff;}
-.main_visual .title_area > * {display:block;}
-.main_visual .title_area > .tit_strong {font-size:50px; line-height:1;}
-.main_visual .title_area > .tit_em {font-size:50px;}
-.main_visual .title_area > .tit_p {font-size:12px; line-height:1.8;}
+.main_visual {overflow:hidden; position:relative; width:100%; height:auto; color:#fff; background-color:#000; }
+.main_visual .hero_bg  {position:relative; width: 100%; height:auto; vertical-align:top;}
+.main_visual .txt_area  {position:absolute; width:1400px; top:0; bottom:0; left:50%; transform:translateX(-50%);}
+.main_visual .title {position:absolute; bottom:350px; left:0;  color:#fff;}
+.main_visual .title > * {display:block;}
+.main_visual .title > .tit_strong {font-size:50px; line-height:1;}
+.main_visual .title > .tit_em {font-size:50px;}
+.main_visual .title > .tit_p {font-size:12px; line-height:1.8;}
 .main_visual .info_area {position:absolute; left:0; font-size:12px; color:#999; }
 
 .tit_strong {font-weight:700;}
 .tit_em {font-weight:300;}
 .tit_p {font-weight:400;}
 
-#footer {width:100%; margin:100px 0 200px 0; background-color:white; text-align:center; color:#666;}
+#footer {width:100%; margin:150px 0 200px 0; background-color:white; text-align:center; color:#666;}
 #footer > .inner {width:1400px; margin:0 auto;}
 #footer > .inner .social {margin-bottom:20px; font-size:0;}
 #footer > .inner .social a {
@@ -90,12 +90,18 @@ html, body{height:100%;}
 #intro {overflow:hidden;}
 #wrap.wrap_intro {height:100%;}
 
-.intro_bg {position: relative; min-width:1920px; width:100%; height:100%;}
-.intro_bg * {position: absolute;}
+.intro_bg {display:block; position:relative; width:1920px; height:1020px;}
+.intro_bg .img_wrapper {overflow:hidden; position:absolute; top:0; left:0; width:100%; height:100%;}
+.intro_bg .img_wrapper img {width:100%; height:100%;}
+
+/*.intro_bg .slider{position:absolute; top:0; left:0 width:100%; height:100%;}*/
+/*.intro_bg * {position: absolute;}
 .intro_bg a {top:0; left:0; bottom:0; right:0; text-indent: -9999px; font-size:0;}
 .intro_bg .right {bottom:-161px; right:-70px; width:820px; transform:rotate(25.65deg)}
 .intro_bg .top {top:-510px; right:535px; width:820px; transform:rotate(129.6deg)}
-.intro_bg .left {top:200px; left:-550px; width:820px; transform:rotate(161.71deg)}
+.intro_bg .left {top:200px; left:-550px; width:820px; transform:rotate(161.71deg)}*/
+
+
 .intro_title {position: absolute; top:48%; left:94px; transform: translateY(-50%)}
 .intro_title > * {display:block;}
 .intro_title em {font-size:30px; font-style:normal; font-weight:300;}
@@ -113,34 +119,37 @@ html, body{height:100%;}
 .intro_info > .info_author > * {float:left;}
 .intro_info > .info_author > .number {margin-right:15px;}
 
-.intro_menu {position:absolute; left:50%; bottom:10%;}
+.intro_menu {position:absolute; left:50%; bottom:10%; transform:translateX(-50%);}
 .intro_menu > ul:after {content:''; display:block; clear:both; zoom:1;}
-.intro_menu > ul > li {float:left; width:22px; padding-left:10px;}
+.intro_menu > ul > li {float:left; position:relative; width:28px; margin-left:22px;}
 .intro_menu > ul > li:first-child {padding-left:0;}
-.intro_menu > ul > li > a {
+.intro_menu > ul > li .move{
 	display:block; 
-	width:3px; 
-	height:28px; 
-	background-color:#000;
-	border-radius:2px;
-	transform:rotate(45deg);
+	position:absolute;
+	top:0;
+	right:0;
+	width:25px;
+	height:35px; 
+	border-right:2px solid #000; 
+	visibility:hidden;
 	transform-origin:100% 100%;
-	transition:all 0.5s ease;
+	transition:all 0.4s ease;
+	content:'';
 }
-.intro_menu > ul> li > a.active {
-	display:block;
-	width:3px; 
-	height:28px; 
-	background-color:#000;
-	border-radius:2px;
-	transform-origin:50% 0%;
-	transform:rotate(-45deg);
+.intro_menu > ul > li > .stay {
+	display:block; 
+	position:relative;
+	top:0;
+	left:0;
+	width:25px; 
+	height:35px; 
+	border-left:2px solid #000;
+	transform:rotate(45deg);
+	transform-origin:0% 100%;
 }
 
-/* main */
-#main .main_visual {background-image:url(../images/main_img_dark_hero.jpg);}
-#main .main_visual .hero_bg img {top:-200px; left:-120px;}
-#main .main_visual .title_area {margin:456px auto 0;}
+/* main */}
+#main .main_visual .title_area {/*! margin:456px auto 0; */}
 
 
 /* main content */
@@ -187,16 +196,20 @@ html, body{height:100%;}
 .section_small_type {width:100%; height:auto;}
 
 /* detail */
-#detail .main_visual .title_area { top:225px;}
-#detail .main_visual .title_area .tit_em {font-size:20px; line-height:4; color:#999;}
-#detail .main_visual .title_area .tit_p {width:375px; margin-top:25px; font-size:14px; color:#ccc;}
-#detail .main_visual .title_area .tit_strong {font-size:50px;}
-#detail .main_visual .title_area .tit_strong_2 {font-size:50px; font-weight:300;}
-#detail .main_visual .info_area {color:#999; font-size:12px; position:absolute; top:860px;}
+#detail .main_visual {width:1920px;}
+#detail .main_visual .title { top:225px;}
+#detail .main_visual .title .tit_em {font-size:20px; line-height:4; color:#999;}
+#detail .main_visual .title .tit_p {width:375px; margin-top:25px; font-size:14px; color:#ccc;}
+#detail .main_visual .title .tit_strong {font-size:50px;}
+#detail .main_visual .title .tit_strong_2 {font-size:50px; font-weight:300;}
+#detail .main_visual .info_area {position:absolute; bottom:100px; color:#999; font-size:12px;}
 
+#detail .content {width:1920px;}
 #detail .content .block {width:100%;}
 #detail .content .block:last-cild {margin-bottom:0px;}
 #detail .content .block img {width:100%; vertical-align:top;}
 
+#detail .content .section .one:hover .bg_dark {visibility:hidden;}
+#detail .content .section .one:hover .txt_area {visibility:visible;}
 
 
