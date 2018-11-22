@@ -144,22 +144,20 @@ html, body{height:100%;}
 }
 .button:first-child {margin-left:0;}
 .button:before, .button:after {
-	visibility: visible;
-	height: 2px;
-	width: 28px;
-	transform: rotate(-45deg);
-	content: '';
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	/* margin-top: -14px; */
 	margin-left: -14px;
-
+	height: 2px;
+	width: 28px;
 	background-color: #000;
+	visibility: hidden;
+	transform: rotate(-45deg);
+	content: '';
 	transition: all 0.25s ease-out;
 }
-.button:after {visibility:hidden;}
-.button:hover:after {visibility:visible; transform: rotate(-135deg);}
+.button:before {visibility: visible;}
+.button.active:after {visibility:visible; transform: rotate(-135deg);}
 
 
 

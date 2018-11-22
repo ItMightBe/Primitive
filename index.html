@@ -74,6 +74,7 @@ function bgSlideWork() {
             i.style.opacity = "0";
         })
         var currentMenu = e.target;
+        console.log(currentMenu)
         var pagerDataValue = e.target.getAttribute('data-order');        
         var currentSlide = document.querySelector(`img[data-order="${pagerDataValue}"]`);
 
@@ -81,6 +82,10 @@ function bgSlideWork() {
         // currentSlide.style.left = "0";
         currentSlide.style.opacity = "1";
 
+        targetAs.forEach(function(a){
+            a.className = "button"
+        })
+        currentMenu.classList.add("active");
     }
 }
 
