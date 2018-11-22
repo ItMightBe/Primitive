@@ -162,6 +162,42 @@ html, body{height:100%;}
 	transform-origin:0% 100%;
 }
 
+.button {
+    height: 28px;
+    width: 28px;
+    position: relative;
+    box-sizing: border-box;
+    line-height: 28px;
+	display: inline-block;
+	margin-left:24px;
+}
+.button:first-child {margin-left:0;}
+
+.button:before, .button:after {
+	visibility: visible;
+	height: 2px;
+	width: 28px;
+	transform: rotate(-45deg);
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	/* margin-top: -14px; */
+	margin-left: -14px;
+
+	background-color: #000;
+	transition: all 0.25s ease-out;
+}
+
+.button:after {
+	visibility:hidden;
+
+}
+.button:hover:after {visibility:visible}
+.button:hover:after { 	transform: rotate(-135deg);}
+
+
+
 /* main */
 /* #main .main_visual .title_area {! margin:456px auto 0;} */
 

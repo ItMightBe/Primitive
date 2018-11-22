@@ -46,37 +46,35 @@
                 </div>
             </div>
             <div class="intro_pager">
-                <ul>
-                    <li data-order="num1"><div href="" class="stay"></div><div href="" class="move"></div></li>
-                    <li data-order="num2"><div href="" class="stay"></div><div href="" class="move"></div></li>
-                    <li data-order="num3"><div href="" class="stay"></div><div href="" class="move"></div></li>
-                    <li data-order="num4"><div href="" class="stay"></div><div href="" class="move"></div></li>
-                    <li data-order="num5"><div href="" class="stay"></div><div href="" class="move"></div></li>
-                </ul>
+                    <a class="button" data-order="num1" href=#></a>
+                    <a class="button" data-order="num2" href=#></a>
+                    <a class="button" data-order="num3" href=#></a>
+                    <a class="button" data-order="num4" href=#></a>
+                    <a class="button" data-order="num5" href=#></a>
             </div>
+            <!-- <div class="intro_pager">
+                <li data-order="num1"><div class="stay"></div><div class="move"></div></li>
+                <li data-order="num2"><div class="stay"></div><div class="move"></div></li>
+                <li data-order="num3"><div class="stay"></div><div class="move"></div></li>
+                <li data-order="num4"><div class="stay"></div><div class="move"></div></li>
+                <li data-order="num5"><div class="stay"></div><div class="move"></div></li>
+            </div> -->
         </div>
     </div>
 <script>
 
-//해야할 것
 
-//1. 인트로페이지
-//(1) 인트로 메뉴 마우스 호버 및 클릭시 메뉴 아이콘 변화
-//    - 체크: 슬라이더로 구성이 되야하는지, 각 아이콘이 지칭하는 것은 무엇인지(정확히 메뉴의 존재가 무슨 일을 하는지)
-//(2) 인트로페이지에 바탕 아무 곳이나 누를 시(클릭 이벤트 발생 시) 작업물 나열된 페이지로 이동
-//    - 체크: 그러나 그 클릭이 흰색 바탕이어야만 하는지, 아니면 타이틀, 인포여도 상관 없는지
-//(3) 배경화면의 요소들은 살짝 움직이고 있는 것이 좋은지.
 
 
 
 
 var introPager = document.querySelector(".intro_pager");
-var targetLis = introPager.querySelectorAll("li");
+var targetAs = introPager.querySelectorAll("a");
 var introBg = document.querySelector(".intro_bg");
 var slideImg = introBg.querySelectorAll(".img");
 
 bgSlideWork();
-introPagerWork();
+// introPagerWork();
 
 var i = 1;
 
@@ -86,8 +84,8 @@ var i = 1;
 // }, 500);
 
 function bgSlideWork() {
-    targetLis.forEach(function(i) {i.addEventListener("click", clickSlide);})
-    //페이저의 각 li에 클릭 이벤트에 대한 리스너를 부착한다.
+    targetAs.forEach(function(i) {i.addEventListener("click", clickSlide);})
+    //페이저의 각 a에 클릭 이벤트에 대한 리스너를 부착한다.
 
     function clickSlide(e) {
         slideImg.forEach(function(i){
@@ -97,15 +95,8 @@ function bgSlideWork() {
         })
         //모든 배경 슬라이드의 visibility를 hidden한다.
 
-        var pagerDataValue;
+        var pagerDataValue = e.target.getAttribute('data-order');
         
-        if(e.target.tagName === "LI"){
-            pagerDataValue = e.target.getAttribute('data-order');
-        } else if(e.target.tagName === "DIV"){
-            console.log(e.target.parentElement);
-            pagerDataValue = e.target.parentElement.getAttribute('data-order');
-        } //현재 클릭이 일어난 페이저의 data-order 값을 변수 pageDataValue에 할당한다.
-
         var currentSlide = document.querySelector(`img[data-order="${pagerDataValue}"]`);
         //현재 클릭이 일어난 페이저의 attiribute 값이 위 pageDataValue와 일치하는 배경 슬라이드를 찾아서
         //currentSlide에 할당한다.
@@ -120,7 +111,7 @@ function introPagerWork() {
     var moving;
     var openedA;
 
-    targetLis.forEach(function (li) {
+    targetAs.forEach(function (li) {
         li.addEventListener('click', menuClick);
     })
 
