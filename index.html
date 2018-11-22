@@ -5,9 +5,9 @@
 <title>PORTFOLIO TEMPLET BY PRIMITIVE</title>
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,700" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/common.css"/>
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 <script>
 // $(document).ready(function(){
 //   $('.slider').bxSlider({
@@ -26,12 +26,6 @@
                 <img class="img num3" data-order="num3" src="images/bg_intro_3.jpeg">
                 <img class="img num4" data-order="num4" src="images/bg_intro_4.jpeg">
                 <img class="img num5" data-order="num5" src="images/bg_intro_5.png">
-<!--                 <a href="main.html">
-                    페이지 이동
-                    <img src="images/intro_img_1.svg" alt="" class="right">
-                    <img src="images/intro_img_2.svg" alt="" class="top">
-                    <img src="images/intro_img_3.svg" alt="" class="left">
-                </a> -->
             </a>
             <h1 class="intro_title">
                 <em>UI/UX DESIGNER</em>
@@ -52,21 +46,9 @@
                     <a class="button" data-order="num4" href=#></a>
                     <a class="button" data-order="num5" href=#></a>
             </div>
-            <!-- <div class="intro_pager">
-                <li data-order="num1"><div class="stay"></div><div class="move"></div></li>
-                <li data-order="num2"><div class="stay"></div><div class="move"></div></li>
-                <li data-order="num3"><div class="stay"></div><div class="move"></div></li>
-                <li data-order="num4"><div class="stay"></div><div class="move"></div></li>
-                <li data-order="num5"><div class="stay"></div><div class="move"></div></li>
-            </div> -->
         </div>
     </div>
 <script>
-
-
-
-
-
 
 var introPager = document.querySelector(".intro_pager");
 var targetAs = introPager.querySelectorAll("a");
@@ -74,7 +56,6 @@ var introBg = document.querySelector(".intro_bg");
 var slideImg = introBg.querySelectorAll(".img");
 
 bgSlideWork();
-// introPagerWork();
 
 var i = 1;
 
@@ -85,60 +66,22 @@ var i = 1;
 
 function bgSlideWork() {
     targetAs.forEach(function(i) {i.addEventListener("click", clickSlide);})
-    //페이저의 각 a에 클릭 이벤트에 대한 리스너를 부착한다.
 
     function clickSlide(e) {
         slideImg.forEach(function(i){
             i.style.visibility = "hidden";
-            i.style.left = "-100%";
+            // i.style.left = "-100%";
             i.style.opacity = "0";
         })
-        //모든 배경 슬라이드의 visibility를 hidden한다.
-
-        var pagerDataValue = e.target.getAttribute('data-order');
-        
+        var currentMenu = e.target;
+        var pagerDataValue = e.target.getAttribute('data-order');        
         var currentSlide = document.querySelector(`img[data-order="${pagerDataValue}"]`);
-        //현재 클릭이 일어난 페이저의 attiribute 값이 위 pageDataValue와 일치하는 배경 슬라이드를 찾아서
-        //currentSlide에 할당한다.
 
         currentSlide.style.visibility = "visible";
-        currentSlide.style.left = "0";
+        // currentSlide.style.left = "0";
         currentSlide.style.opacity = "1";
+
     }
-}
-
-function introPagerWork() {
-    var moving;
-    var openedA;
-
-    targetAs.forEach(function (li) {
-        li.addEventListener('click', menuClick);
-    })
-
-    function menuClick(e) {
-        console.log("it is clicked");
-        var movings = introPager.querySelectorAll('.move');
-        console.log(movings);
-
-        movings.forEach(function(i){
-            i.style.transform = "rotate(0deg)";
-            i.style.opacity = "0";
-            i.style.visibility = "hidden";
-        })
-
-        if(e.target.tagName == "LI") {
-            var currentMoving = e.target.querySelector('.move');
-        } else if(e.target.tagName == "DIV") {
-            var currentMoving = e.target.parentElement.querySelector('.move');
-        }
-        
-        currentMoving.style.visibility = "visible";
-        currentMoving.style.opacity = "1";
-        currentMoving.style.transform = "rotate(-45deg)";
-        openedA = moving;
-    }
-
-
 }
 
 </script>
