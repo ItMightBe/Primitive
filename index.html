@@ -62,16 +62,16 @@ $(document).ready(function(){
     
 });
 
-bgSlideWork();
+slideNavWork();
 
 
-function bgSlideWork() {
+function slideNavWork() {
     var introPager = document.querySelector(".intro_pager");
     var targetAs = introPager.querySelectorAll("a");
 
-    targetAs.forEach(function(i) {i.addEventListener("click", clickSlide);})
+    targetAs.forEach(function(i) {i.addEventListener("click", addActive);})
 
-    function clickSlide(e) {
+    function addActive(e) {
         var currentMenu = e.target;
         targetAs.forEach(function(a){a.className = "button"})
         currentMenu.classList.add("active");
