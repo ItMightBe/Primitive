@@ -56,6 +56,8 @@ $(document).ready(function(){
     var slideno = $(this).data('order');
     $('.slider').slick('slickGoTo', slideno);
     })
+    var currentSlide = $('.slider').slick('slickCurrentSlide');
+    $('.intro_pager').find(`a[data-order = "${currentSlide}"]`).addClass('active');
 
     $('.slider').on('afterChange', function(event, slick, currentSlide){
         $('.intro_pager').find('a').removeClass('active');
@@ -65,7 +67,6 @@ $(document).ready(function(){
 });
 
 slideNavWork();
-
 
 function slideNavWork() {
     var introPager = document.querySelector(".intro_pager");
