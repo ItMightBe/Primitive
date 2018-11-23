@@ -6,7 +6,6 @@
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,700" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/common.css"/>
 <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-<!-- // Add the new slick-theme.css if you want the default styling -->
 <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 </head>
 <body>
@@ -32,11 +31,11 @@
                 </div>
             </div>
             <div class="intro_pager">
+                <a class="button" data-order="0" href=#></a>
                 <a class="button" data-order="1" href=#></a>
                 <a class="button" data-order="2" href=#></a>
                 <a class="button" data-order="3" href=#></a>
                 <a class="button" data-order="4" href=#></a>
-                <a class="button" data-order="5" href=#></a>
             </div>
         </div>
     </div>
@@ -50,64 +49,31 @@ $(document).ready(function(){
         autoplay: true,
         autoplaySpeed: 3000,
     });
-});
-
-$('a[data-order]').click(function(e){
+    $('a[data-order]').click(function(e){
     e.preventDefault();
     var slideno = $(this).data('order');
-    $('.slider').slick('slickGoTo', slideno - 1)
-})
+    $('.slider').slick('slickGoTo', slideno);
+    })
 
-
-var introPager = document.querySelector(".intro_pager");
-var targetAs = introPager.querySelectorAll("a");
-var introBg = document.querySelector(".intro_bg");
-var slideImg = introBg.querySelectorAll(".img");
-var i = 1;
+    $('.slider').on('afterChange', function(event, slick, currentSlide){
+        $('.intro_pager').find('a').removeClass('active');
+        $('.intro_pager').find(`a[data-order = "${currentSlide}"]`).addClass('active');
+    })
+    
+});
 
 bgSlideWork();
-// intervalWork();
-
-
-function intervalWork() {
-    setInterval(function(){
-    var currnetSlide = document.querySelector(".img").classList.contains("active");
-    console.log(currentSlide);
-    var slide = document.querySelector("." + i + "");
-    i++;
-    console.log(slide);
-    console.log(i);
-    if(i > 5){i = 1;}
-
-    }, 3000);
-}
 
 
 function bgSlideWork() {
+    var introPager = document.querySelector(".intro_pager");
+    var targetAs = introPager.querySelectorAll("a");
+
     targetAs.forEach(function(i) {i.addEventListener("click", clickSlide);})
 
     function clickSlide(e) {
-        slideImg.forEach(function(i){
-            // i.style.visibility = "hidden";
-            // // i.style.left = "-100%";
-            // i.style.opacity = "0";
-            if(i.classList.contains("active")){i.classList.remove("active")}
-            else {return}
-        })
         var currentMenu = e.target;
-        console.log(currentMenu)
-        var pagerDataValue = e.target.getAttribute('data-order');        
-        var currentSlide = document.querySelector(`img[data-order="${pagerDataValue}"]`);
-
-        currentSlide.classList.add("active");
-
-        // currentSlide.style.visibility = "visible";
-        // // currentSlide.style.left = "0";
-        // currentSlide.style.opacity = "1";
-
-        targetAs.forEach(function(a){
-            a.className = "button"
-        })
+        targetAs.forEach(function(a){a.className = "button"})
         currentMenu.classList.add("active");
     }
 }
