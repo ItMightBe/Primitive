@@ -46,7 +46,7 @@ html, body{height:100%;}
 #header .gnb > ul > li:first-child {margin-left:0px;}
 #header .gnb > ul > li a {color:#fff; font-size:14px; line-height: 36px;}
 
-.main_visual {overflow:hidden; position:relative; width:100%; height:auto; color:#fff; background-color:#000; }
+.main_visual {overflow:hidden; position:relative; width:100%; min-width:1400px; height:auto; color:#fff; background-color:#000;}
 .main_visual .hero_bg  {position:relative; width: 100%; height:auto; vertical-align:top;}
 .main_visual .txt_area  {position:absolute; width:1400px; top:0; bottom:0; left:50%; transform:translateX(-50%);}
 .main_visual .title {position:absolute; bottom:350px; left:0; width:100%; color:#fff;}
@@ -89,7 +89,7 @@ html, body{height:100%;}
 /* intro */
 #intro {overflow:hidden;}
 #wrap.wrap_intro {height:100%;}
-
+#intro .slider {width:100%; min-width:1400px; }
 .intro_title {position: absolute; top:48%; left:94px; transform: translateY(-50%)}
 .intro_title > * {display:block;}
 .intro_title em {font-size:30px; font-style:normal; font-weight:300;}
@@ -189,7 +189,6 @@ html, body{height:100%;}
 .section_small_type {width:100%; height:auto;}
 
 /* detail */
-#detail .main_visual {width:1920px;}
 #detail .main_visual .title { top:225px;}
 #detail .main_visual .title .tit_em {font-size:20px; line-height:4; color:#999;}
 #detail .main_visual .title .tit_p {width:375px; margin-top:25px; font-size:14px; color:#ccc;}
@@ -197,7 +196,7 @@ html, body{height:100%;}
 #detail .main_visual .title .tit_strong_2 {font-size:50px; font-weight:300;}
 #detail .main_visual .info_area {position:absolute; bottom:100px; color:#999; font-size:12px;}
 
-#detail .content {width:1920px;}
+#detail .content {width:100%; min-width:1400px;}
 #detail .content .block {width:100%;}
 #detail .content .block:last-cild {margin-bottom:0px;}
 #detail .content .block img {width:100%; vertical-align:top;}
