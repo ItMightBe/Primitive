@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<title>PORTFOLIO TEMPLET BY PRIMITIVE</title>
+<title>PORTFOLIO</title>
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,700" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/common.css"/>
 </script>
@@ -27,64 +27,37 @@
                     <p class="email">gsh3676@gmail.com</p>
                 </div>
             </div>
-            <div class="intro_menu">
-                <ul>
-                    <li><a href="" class="stay"></a><a href="" class="move"></a></li>
-                    <li><a href="" class="stay"></a><a href="" class="move"></a></li>
-                    <li><a href="" class="stay"></a><a href="" class="move"></a></li>
-                    <li><a href="" class="stay"></a><a href="" class="move"></a></li>
-                    <li><a href="" class="stay"></a><a href="" class="move"></a></li>
-                </ul>
+            <div class="intro_pager">
+                <a class="button" data-order="0" href=#></a>
+                <a class="button" data-order="1" href=#></a>
+                <a class="button" data-order="2" href=#></a>
+                <a class="button" data-order="3" href=#></a>
+                <a class="button" data-order="4" href=#></a>
             </div>
         </div>
     </div>
 <script>
 
-//해야할 것
-
-//1. 인트로페이지
-//(1) 인트로 메뉴 마우스 호버 및 클릭시 메뉴 아이콘 변화
-//    - 체크: 슬라이더로 구성이 되야하는지, 각 아이콘이 지칭하는 것은 무엇인지(정확히 메뉴의 존재가 무슨 일을 하는지)
-//(2) 인트로페이지에 바탕 아무 곳이나 누를 시(클릭 이벤트 발생 시) 작업물 나열된 페이지로 이동
-//    - 체크: 그러나 그 클릭이 흰색 바탕이어야만 하는지, 아니면 타이틀, 인포여도 상관 없는지
-//(3) 배경화면의 요소들은 살짝 움직이고 있는 것이 좋은지.
-
-
-
 var intro = document.querySelector("#intro");
 
 introMenuWork();
 
-
 function introMenuWork() {
-    console.log(intro);
-    var introMenu = intro.querySelector(".intro_menu");
-    var targetLis = introMenu.querySelectorAll("li");
-    var openedA;
+    var introMenu = intro.querySelector(".intro_pager");
+    var targetAs = introMenu.querySelectorAll("a");
+    var openedTarget;
 
-    targetLis.forEach(function (li) {
+    targetAs.forEach(function (li) {
         li.addEventListener('mouseenter', menuOver);
         li.addEventListener('mouseleave', menuOut);
     })
-
     function menuOver(e) {
-        console.log("it is over")
-
-        var move = e.target.querySelector('.move');
-
-        move.style.visibility = "visible";
-        move.style.opacity = "1";
-        move.style.transform = "rotate(-45deg)";
-        openedA = move;
+        var target = e.target;
+        target.classList.add("active");
+        openedTarget = target;
     }
     function menuOut(e) {
-        console.log("it is out")
-
-        openedA.style.transform = "rotate(0deg)";
-        openedA.style.opacity = "0";
-        openedA.style.visibility = "hidden";
-        
-
+        openedTarget.className = "button";   
     }
 }
 
