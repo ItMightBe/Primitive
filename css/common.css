@@ -38,7 +38,6 @@ html, body{height:100%;}
 #header .inner:after {content:''; display:block; clear:both; zoom:1;}
 #header .logo {float:left;}
 #header .logo a {color:white; font-size:24px;}
-#header .logo img {display:none;}
 #header .gnb {float:right;}
 #header .gnb > ul {overflow:hidden;}
 #header .gnb > ul > li {float:left; margin-left:46px;}
