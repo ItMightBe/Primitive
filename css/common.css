@@ -30,7 +30,6 @@ html, body{height:100%;}
 #main {position: relative; width:100%; height:auto;} 
 #detail {position: relative; width:100%; height:auto;} 
 
-
 /* common */
 * {font-family: 'Noto Sans KR', sans-serif;}
 
@@ -68,13 +67,14 @@ html, body{height:100%;}
 	width:35px; 
 	height:36px; 
 	margin-left:27px;
-	background:url(../images/ico_social.gif) no-repeat;
+	background-image:url(../images/ico_social.gif);
+	background-repeat: no-repeat;
 	text-indent:-9999px;
 }
-#footer > .inner .social .fb {background-position: 0 0; margin-left:0;}
-#footer > .inner .social .pin {background-position: -62px 0;}
-#footer > .inner .social .twit {background-position: -124px 0;}
-#footer > .inner .social .insta {background-position: -185px 0;}
+#footer > .inner .social .fb {background-position:0 0; margin-left:0;}
+#footer > .inner .social .pin {background-position:-62px 0;}
+#footer > .inner .social .twit {background-position:-124px 0;}
+#footer > .inner .social .insta {background-position:-185px 0;}
 #footer > .inner .info {font-style:normal; font-size:0;}
 #footer > .inner .info address p {
 	display:inline-block; 
@@ -106,40 +106,38 @@ html, body{height:100%;}
 	letter-spacing: 27px; 
 	line-height: 2;
 }
-.intro_info {font-weight:400; color:#666; font-size: 16px;}
-.intro_info > .info_date {position: absolute; top:48%; right:67px; transform: rotate(-90deg)}
-.intro_info > .info_author {position: absolute; left:94px; bottom:68px;}
+.intro_info {font-weight:400; color:#666; font-size:16px;}
+.intro_info > .info_date {position:absolute; top:48%; right:67px; transform:rotate(-90deg)}
+.intro_info > .info_author {position:absolute; left:94px; bottom:68px;}
 .intro_info > .info_author > * {float:left;}
 .intro_info > .info_author > .number {margin-right:15px;}
 
 .intro_pager {position:absolute; left:50%; bottom:10%; transform:translateX(-50%);}
 .button {
-    height: 28px;
-    width: 28px;
-    position: relative;
-    box-sizing: border-box;
-    line-height: 28px;
-	display: inline-block;
+    height:28px;
+    width:28px;
+    position:relative;
+    box-sizing:border-box;
+    line-height:28px;
+	display:inline-block;
 	margin-left:24px;
 }
 .button:first-child {margin-left:0;}
 .button:before, .button:after {
 	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-left: -14px;
-	height: 2px;
-	width: 28px;
-	background-color: #000;
-	visibility: hidden;
-	transform: rotate(-45deg);
-	content: '';
-	transition: all 0.25s ease-out;
+	top:50%;
+	left:50%;
+	margin-left:-14px;
+	height:2px;
+	width:28px;
+	background-color:#000;
+	visibility:hidden;
+	transform:rotate(-45deg);
+	content:'';
+	transition:all 0.25s ease-out;
 }
 .button:before {visibility: visible;}
 .button.active:after {visibility:visible; transform: rotate(-135deg);}
-
-
 
 /* main */
 #main .main_visual .btn_arrow {
