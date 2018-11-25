@@ -89,7 +89,12 @@ html, body{height:100%;}
 /* intro */
 #intro {overflow:hidden;}
 #wrap.wrap_intro {height:100%;}
-#intro .slider {width:100%; min-width:1400px; }
+.link_svg_version {overflow:hidden; display:block; position: absolute; top:0; left:0; right:0; bottom:0;}
+.link_svg_version > * {display:block; position:absolute; width:760px;}
+.link_svg_version .right{display:block; right:-100px; bottom:-190px;  transform:rotate(25.65deg);}
+.link_svg_version .top{display:block; top:-470px; left:30%; transform:rotate(129.6deg);}
+.link_svg_version .left{display:block; left:-499px; top:15%; transform:rotate(161.71deg)}
+#intro .slider {width:100%; min-width:1400px;}
 .intro_title {position: absolute; top:48%; left:94px; transform: translateY(-50%)}
 .intro_title > * {display:block;}
 .intro_title em {font-size:30px; font-style:normal; font-weight:300;}

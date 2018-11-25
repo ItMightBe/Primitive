@@ -39,29 +39,16 @@
             </div>
         </div>
     </div>
-<!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="slick/slick.min.js"></script>
 <script>
 $(document).ready(function(){  
-    // console.log($('#wrap').height()); 
     $('.slider').slick({
         autoplay: true,
         autoplaySpeed: 3000,
         arrows: false,
         pauseOnHover: false,
-    });
-    $(window).resize(function(){
-        console.log($(window).width());
-        console.log($('.slider').width());
-        var windowHeight = $(window).height();
-        var imgHeight = $('.slider').find('img').height();
-        // if( windowHeight > imgHeight ){
-        //     $('.img').css("height", "" + windowHeight + "");
-        //     $('.img').css("width", "auto");
-        // }
-    })  
+    });  
     $('a[data-order]').click(function(e){
     e.preventDefault();
     var slideno = $(this).data('order');
